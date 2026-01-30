@@ -106,7 +106,7 @@ def hapus_baris(namafile, tulisan, baris):
     simpan_file(namafile, tulisan, mode="w")
 
 @handle_input_baris(prompt="Mo edit baris berapa")
-def sunting_kata(namafile):
+def sunting_kata(namafile, tulisan, baris):
     perkata = tulisan[baris-1].split()
     for i, kata in enumerate(perkata, start=1):
         print(f"[{i}]{kata}", end = " ")
@@ -126,8 +126,6 @@ def sunting_kata(namafile):
     #gabungkan kembali jadi tulisan
     tulisan[baris-1] = kalimat + "\n"
     simpan_file(namafile, tulisan, mode="w")
-
-
 
 #Program Utama memanggil fungsi-fungsi
 if __name__ == "__main__":
